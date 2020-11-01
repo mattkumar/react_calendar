@@ -3,7 +3,7 @@ dec <- read_csv("www/data/dec.csv")
 
 #Add in calendar dates of interest!
 my_cal <- dec %>%
-            mutate_if(is.numeric, as.character) %>%
+          mutate_if(is.numeric, as.character) %>%
   
           #Pay day - every Tuesday!
           mutate(Tuesday =  paste0('<p>',Tuesday,'</p>',

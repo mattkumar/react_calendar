@@ -52,7 +52,7 @@
                        }
                    }),
                    
-                   #must override the settings 
+                   #Create footnotes
                    columns = list(Sunday     = colDef(footer = paste0('<img src="https://vignette.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249"></img> Pay Day'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
                                   Monday     = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/MarioWalkingR.gif"></img> In Office'),
@@ -68,5 +68,4 @@
  } 
  
  #run
- 
  shiny::shinyApp(ui, server)
