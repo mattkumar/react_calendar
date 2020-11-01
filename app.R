@@ -53,15 +53,15 @@
                    }),
                    
                    #Create footnotes
-                   columns = list(Sunday     = colDef(footer = paste0('<img src="https://vignette.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249"></img> Pay Day'),
+                   columns = list(Sunday     = colDef(footer = paste0('<img src="img/coin.gif"></img> Pay Day'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
-                                  Monday     = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/MarioWalkingR.gif"></img> In Office'),
+                                  Monday     = colDef(footer = paste0('<img src="img/MarioWalkingR.gif"></img> In Office'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
-                                  Tuesday    = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/LuigiWalkingR.gif"></img> WFH'),
+                                  Tuesday    = colDef(footer = paste0('<img src="img/LuigiWalkingR.gif"></img> WFH'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
-                                  Wednesday  = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/MarioInvincibleR.gif"></img> Vacation!'),
+                                  Wednesday  = colDef(footer = paste0('<img src="img/MarioInvincibleR.gif"></img> Vacation!'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
-                                  Thursday   = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/QuestionBlock.gif"></img> Tenative'),
+                                  Thursday   = colDef(footer = paste0('<img src="img/QuestionBlock.gif"></img> Tenative'),
                                                       footerStyle = list(html=TRUE, fontSize=11))
                    ))
      )
