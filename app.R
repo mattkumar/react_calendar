@@ -35,7 +35,8 @@
          mutate(Tuesday =  paste0('<p>',Tuesday,'</p>',
                                    '<p><img src="https://vignette.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249"></img></p>')) %>%
          mutate(Friday = ifelse(Friday == "25",paste0('<p>',Friday,'</p>','<p><img src="http://img1.joyreactor.com/pics/post/gif-christmas-tree-christmas-pixel-art-1003393.gif" height="75"></img></p>'),Friday)) %>%
-         mutate(Thursday = ifelse(Thursday == "31",paste0('<p>',Thursday,'</p>','<p><img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/TheEnd.png" height="22"></img></p>'),Thursday))
+         mutate(Thursday = ifelse(Thursday == "31",paste0('<p>',Thursday,'</p>','<p><img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/TheEnd.png" height="22"></img></p>'),Thursday)) %>%
+         mutate(Saturday = ifelse(Saturday == "5", paste0('<p>',Saturday,'</p>', '<p style="color:red;font-size:12px">Volunteering</p>'), Saturday))
      
      #reactable
      output$sales <- renderReactable(
@@ -44,12 +45,13 @@
                    theme = reactableTheme(backgroundColor = "black",
                                           stripedColor = "black",
                                           style=list(color = "white"),
-                                          headerStyle = list(borderColor = "black")),
+                                          headerStyle = list(borderColor = "black"),
+                                          footerStyle = list(borderColor = "black")),
                    
                    #setup basic column definitions
                    #additionally, if a given cell HAS data, add a border
                    defaultColDef = colDef(align = "center",
-                                          width = 1200/7,
+                                          width = 171,
                                           html  = TRUE,
                                           style = function(value) {
                        if(!is.na(value)) {
@@ -60,7 +62,8 @@
                    }),
                    
                    #must override the settings 
-                   columns = list(Sunday     = colDef(),
+                   columns = list(Sunday     = colDef(footer = paste0('<img src="https://vignette.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249"></img> Pay Day'),
+                                                      footerStyle = list(html=TRUE, fontSize=11)),
                                   Monday     = colDef(),
                                   Tuesday    = colDef(),
                                   Wednesday  = colDef(),
