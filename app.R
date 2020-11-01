@@ -11,8 +11,8 @@
                  use_font("press-start-2p", "www/css/press-start-2p.css"),
                  shinyWidgets::setBackgroundImage(src="img/bg.png"),
                  string_snow,
-                 
-                 h1("December 2020", align="center"),
+                 br(),
+                 h2("December 2020", align="center"),
                  br(),
                  column(width=12, 
                         offset=2,
@@ -27,17 +27,8 @@
  server <- function(input, output, session) {
      
      #read data
-     dec <- read_csv("www/data/dec.csv")
-     
-     #basic manip
-     my_cal <- dec %>%
-         mutate_if(is.numeric, as.character) %>%
-         mutate(Tuesday =  paste0('<p>',Tuesday,'</p>',
-                                   '<p><img src="https://vignette.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249"></img></p>')) %>%
-         mutate(Friday = ifelse(Friday == "25",paste0('<p>',Friday,'</p>','<p><img src="http://img1.joyreactor.com/pics/post/gif-christmas-tree-christmas-pixel-art-1003393.gif" height="75"></img></p>'),Friday)) %>%
-         mutate(Thursday = ifelse(Thursday == "31",paste0('<p>',Thursday,'</p>','<p><img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/TheEnd.png" height="22"></img></p>'),Thursday)) %>%
-         mutate(Saturday = ifelse(Saturday == "5", paste0('<p>',Saturday,'</p>', '<p style="color:red;font-size:12px">Volunteering</p>'), Saturday))
-     
+     source("dataprep.R")
+   
      #reactable
      output$sales <- renderReactable(
          reactable(my_cal,
@@ -64,15 +55,17 @@
                    #must override the settings 
                    columns = list(Sunday     = colDef(footer = paste0('<img src="https://vignette.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249"></img> Pay Day'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
-                                  Monday     = colDef(),
-                                  Tuesday    = colDef(),
-                                  Wednesday  = colDef(),
-                                  Thursday   = colDef(),
-                                  Friday     = colDef(),
-                                  Saturday   = colDef()
+                                  Monday     = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/MarioWalkingR.gif"></img> In Office'),
+                                                      footerStyle = list(html=TRUE, fontSize=11)),
+                                  Tuesday    = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/LuigiWalkingR.gif"></img> WFH'),
+                                                      footerStyle = list(html=TRUE, fontSize=11)),
+                                  Wednesday  = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/MarioInvincibleR.gif"></img> Vacation!'),
+                                                      footerStyle = list(html=TRUE, fontSize=11)),
+                                  Thursday   = colDef(footer = paste0('<img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/QuestionBlock.gif"></img> Tenative'),
+                                                      footerStyle = list(html=TRUE, fontSize=11))
                    ))
      )
- }
+ } 
  
  #run
  
