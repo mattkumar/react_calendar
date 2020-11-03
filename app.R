@@ -21,7 +21,8 @@
                         br(),br(),
                         br(),br(),
                         br(),br(), 
-                        reactableOutput('sales',  width="1200px", height="700px")
+                        reactableOutput('sales',  width="1200px", height="700px") 
+                        
                      )
  )
   
@@ -87,9 +88,8 @@
      #Modal 2
      observeEvent(input$show2, {
         showModal(modalDialog(
-           title = "Tassssssssssssdasdsade",
-           HTML('<p><img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/GiantPiranhaPlantGreen.gif" class="Center" height="30"></img></p>'), 
-           "This isdasdasdasdasdasdsas an important message!"
+           title = "Placeholder",
+           "A placeholder for Modal 2"
         ))
      })
  }

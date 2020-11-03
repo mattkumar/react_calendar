@@ -15,7 +15,7 @@ my_cal <- dec %>%
   
   #End of 2020
   mutate(Thursday = ifelse(Thursday == "31",paste0('<p>',Thursday,'</p>',
-                                                   '<p><img src="img/Super_Star_SMASSMB3.gif" height="22"></img><img src="img/TheEnd.png" height="22"></img><img src="img/Super_Star_SMASSMB3.gif" height="22"></img></p>'),
+                                                   '<p><img src="img/starcard.gif" height="22"></img><img src="img/TheEnd.png" height="22"></img><img src="img/starcard.gif" height="22"></img></p>'),
                            Thursday)) %>%
   
   #Volunteering
@@ -48,10 +48,15 @@ my_cal <- dec %>%
   mutate(Wednesday = ifelse(Wednesday == "16", paste0('<p><img src="img/Rotodisc.gif" height="110"></img></p>'), Wednesday)) %>%
   
   
-  #Dentist
-  mutate(Sunday = ifelse(Sunday == "13", paste0('<p>',Sunday,'</p>',
-                                                '<p>','Dentist','</p>',
-                                                '<p><img src="img/Ani_smb3_chainchomp.gif" height="45"></img></p>'), Sunday)) %>%
+  #Doctors!
+  mutate(Wednesday = ifelse(Wednesday == "9", paste0('<p>',Wednesday,'</p>',
+                                                     '<p style="color:lightblue;font-size:12px">Drs. Appt</p>',
+                                                     '<p><img src="img/ani_drmario.gif" height="45"></img></p>'), Wednesday)) %>%
+  
+  #Skiing!
+  mutate(Sunday = ifelse(Sunday %in% c("6","13","27"), paste0('<p>',Sunday,'</p>',
+                                                               '<p style="color:lightblue;font-size:12px">Skiing</p>',
+                                                               '<p><img src="img/skii.png" height="55"></img></p>'), Sunday)) %>%
   #Vacation Week off
   mutate(Monday = ifelse(Monday == "21", paste0('<p>',Monday,'</p>', 
                                                 '<p><img src="img/MarioInvincibleR.gif" height="25"></img></p>'), Monday))  %>%
@@ -63,8 +68,8 @@ my_cal <- dec %>%
   
   #Vacation Starts!
   mutate(Friday = ifelse(Friday == "18", paste0('<p>',Friday,'</p>', 
-                                                '<p style="color:yellow;font-size:12px">Vacation</p>',
-                                                '<p><img src="img/MiniFortressBossWalking.gif" height="55"></img></p>'), Friday)) %>%
+                                                '<p style="color:lightblue;font-size:12px">Vacation</p>',
+                                                '<p><img src="img/ani_smb3_boomboomfly.gif" height="55"></img></p>'), Friday)) %>%
   
   #End of 2020
   mutate(Saturday = ifelse(Saturday == "26",paste0('<p>',Saturday,'</p>',
@@ -72,22 +77,21 @@ my_cal <- dec %>%
   
   #Christmas Eve Mass
   mutate(Thursday = ifelse(Thursday == "24", paste0('<p>',Thursday,'</p>', 
-                                                    '<p style="color:green;font-size:12px">Mass</p>',
+                                                    '<p style="color:lightred;font-size:12px">Mass</p>',
                                                     '<p><img src="img/Fortress2-SMB3.png" height="40"></img></p>'), Thursday)) %>%
   
   #Grandmas
   mutate(Sunday = ifelse(Sunday == "20", paste0('<p>',Sunday,'</p>',
-                                                '<p>','Grandmas','</p>',
+                                                '<p style="color:lightblue;font-size:12px">Grandparents</p>',
                                                 '<p><img src="img/SMB3ToadHouses.png" height="30"></img></p>'), Sunday))  %>%
   
   #Concert
   mutate(Saturday = ifelse(Saturday == "19",paste0('<p>',Saturday,'</p>',
-                                                   '<p>Concert</p>',
+                                                   '<p style="color:lightblue;font-size:12px">Concert</p>',
                                                    '<p><img src="img/Ani_smb3noteblock.gif" height="35"></img></p>'),Saturday))  %>%
   
-  #Concert
+  #Meetings
   mutate(Friday = ifelse(Friday %in% c("11","4") ,paste0('<p>',Friday,'</p>',
-                                                         '<p><img src="img/Big_Block_SMB3.png" height="55"></img></p>'),Friday))  
+                                                         '<p><img src="img/FlyingQuestionBlock.gif" height="55"></img></p>'),Friday))  
   
-
-  
+   
