@@ -10,24 +10,20 @@
  ui <- fluidPage(#include nes.min.css external file
                  theme = "css/nes.min.css",
                  
-<<<<<<< HEAD
                  #include external font file downloaded by gfonts
                  gfonts::use_font("press-start-2p", "www/css/press-start-2p.css"),
-=======
+                 
                  #include fonts from gfonts
                  use_font("press-start-2p", "www/css/press-start-2p.css"),
->>>>>>> cc278832f02ee94ecc62ff1050296fee936a50e2
                  
                  #set background
                  shinyWidgets::setBackgroundImage(src="img/bg.png"),
                  
-<<<<<<< HEAD
                  #HTML for snow effect (see: global.R for definition, references.R for source url)
                  snow_string,
-=======
+
                  #HTML for snow effect (see global.R for definition)
                  string_snow,
->>>>>>> cc278832f02ee94ecc62ff1050296fee936a50e2
                  
                  #General UI formatting
                  br(),
