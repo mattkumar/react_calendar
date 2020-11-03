@@ -48,19 +48,18 @@
                    #javascipt for modals (see global.R for definition)
                    onClick = js_string,
                    
-                   #basic theme options
+                   #basic theme options - test driving this approach - some of what's below could be included here too!
                    theme = reactableTheme(backgroundColor = "black",
                                           stripedColor = "black",
-                                          style=list(color = "white"),
-                                          headerStyle = list(borderColor = "black"),
-                                          footerStyle = list(borderColor = "black")),
+                                          style=list(color = "white")),
                    
                    #setup basic column definitions
                    #additionally, if a given cell HAS data, add a border
                    defaultColDef = colDef(align = "center",
                                           width = 171,
                                           html  = TRUE,
-                                          footerStyle = list(html=TRUE, fontSize=11),
+                                          headerStyle = list(borderColor = "black"),
+                                          footerStyle = list(html=TRUE, fontSize=11, borderColor = "black"),
                                           style = function(value) {
                        if(!is.na(value)) {
                             list(borderRight = '1px solid #ddd', borderBottom = '1px solid #ddd', borderLeft = '1px solid #ddd', borderTop = '1px solid #ddd', height=125)
