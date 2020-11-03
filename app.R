@@ -14,7 +14,7 @@
                  gfonts::use_font("press-start-2p", "www/css/press-start-2p.css"),
                  
                  #set background
-                 shinyWidgets::setBackgroundImage(src="img/bg.png"),
+                 shinyWidgets::setBackgroundImage(src = "img/bg.png"),
                  
                  #HTML for snow effect (see: global.R for definition, references.R for source url)
                  snow_string,
@@ -24,14 +24,14 @@
                  
                  #General UI formatting
                  br(),
-                 h2("December 2020", align="center"),
+                 h2("December 2020", align = "center"),
                  br(),
                  column(width=12, 
                         offset=2,
                         br(),br(),
                         br(),br(),
                         br(),br(), 
-                        reactableOutput('cal',  width="1200px", height="700px") 
+                        reactableOutput('cal',  width = "1200px", height = "700px") 
                      )
  )
   
@@ -51,7 +51,7 @@
                    #basic theme options - test driving this approach - some of what's below could be included here too!
                    theme = reactableTheme(backgroundColor = "black",
                                           stripedColor = "black",
-                                          style=list(color = "white")),
+                                          style = list(color = "white")),
                    
                    #setup basic column definitions
                    #additionally, if a given cell HAS data, add a border
@@ -61,12 +61,18 @@
                                           headerStyle = list(borderColor = "black"),
                                           footerStyle = list(html=TRUE, fontSize=11, borderColor = "black"),
                                           style = function(value) {
-                       if(!is.na(value)) {
-                            list(borderRight = '1px solid #ddd', borderBottom = '1px solid #ddd', borderLeft = '1px solid #ddd', borderTop = '1px solid #ddd', height=125)
-                       } else {
-                           list(borderRight = '1px solid #000',  height=125)
-                       }
-                   }),
+                                                                    if(!is.na(value)) {
+                                                                         list(borderRight = '1px solid #ddd', 
+                                                                              borderBottom = '1px solid #ddd', 
+                                                                              borderLeft = '1px solid #ddd', 
+                                                                              borderTop = '1px solid #ddd', 
+                                                                              height = 125)
+                                                                    } else {
+                                                                        list(borderRight = '1px solid #000',  
+                                                                             height = 125)
+                                                                    }
+                                                                }
+                                          ),
                    
                    #Create footnotes - the styling for footnotes is set in footerStyle in defaultColDef above 
                    columns = list(Sunday     = colDef(footer = paste0('<img src="img/coin.gif"></img> Pay Day')),
