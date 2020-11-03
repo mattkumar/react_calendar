@@ -7,12 +7,19 @@
  source("global.R")
  
  #ui
- ui <- fluidPage(theme = "css/nes.min.css",
+ ui <- fluidPage(#include nes.min.css external file
+                 theme = "css/nes.min.css",
+                 
+                 #include fonts from gfonts
                  use_font("press-start-2p", "www/css/press-start-2p.css"),
+                 
+                 #set background
                  shinyWidgets::setBackgroundImage(src="img/bg.png"),
                  
-                 #HTML for snow effect (see globals.R for definition)
+                 #HTML for snow effect (see global.R for definition)
                  string_snow,
+                 
+                 #General UI formatting
                  br(),
                  h2("December 2020", align="center"),
                  br(),
@@ -22,7 +29,6 @@
                         br(),br(),
                         br(),br(), 
                         reactableOutput('sales',  width="1200px", height="700px") 
-                        
                      )
  )
   
@@ -36,7 +42,7 @@
      output$sales <- renderReactable(
          reactable(my_cal,
                    
-                   #javascipt for modals (see globals.R for definition)
+                   #javascipt for modals (see global.R for definition)
                    onClick = js_string,
                    
                    #basic theme options
@@ -51,6 +57,7 @@
                    defaultColDef = colDef(align = "center",
                                           width = 171,
                                           html  = TRUE,
+                                          footerStyle = list(html=TRUE, fontSize=11),
                                           style = function(value) {
                        if(!is.na(value)) {
                             list(borderRight = '1px solid #ddd', borderBottom = '1px solid #ddd', borderLeft = '1px solid #ddd', borderTop = '1px solid #ddd', height=125)
@@ -59,17 +66,12 @@
                        }
                    }),
                    
-                   #Create footnotes
-                   columns = list(Sunday     = colDef(footer = paste0('<img src="img/coin.gif"></img> Pay Day'),
-                                                      footerStyle = list(html=TRUE, fontSize=11)),
-                                  Monday     = colDef(footer = paste0('<img src="img/MarioWalkingR.gif"></img> In Office'),
-                                                      footerStyle = list(html=TRUE, fontSize=11)),
-                                  Tuesday    = colDef(footer = paste0('<img src="img/LuigiWalkingR.gif"></img> WFH'),
-                                                      footerStyle = list(html=TRUE, fontSize=11)),
-                                  Wednesday  = colDef(footer = paste0('<img src="img/MarioInvincibleR.gif"></img> Vacation!'),
-                                                      footerStyle = list(html=TRUE, fontSize=11)),
-                                  Thursday   = colDef(footer = paste0('<img src="img/QuestionBlock.gif"></img> Meeting'),
-                                                      footerStyle = list(html=TRUE, fontSize=11))
+                   #Create footnotes - the styling for footnotes is set in footerStyle in defaultColDef above 
+                   columns = list(Sunday     = colDef(footer = paste0('<img src="img/coin.gif"></img> Pay Day')),
+                                  Monday     = colDef(footer = paste0('<img src="img/MarioWalkingR.gif"></img> In Office')),
+                                  Tuesday    = colDef(footer = paste0('<img src="img/LuigiWalkingR.gif"></img> WFH')),
+                                  Wednesday  = colDef(footer = paste0('<img src="img/MarioInvincibleR.gif"></img> Vacation!')),
+                                  Thursday   = colDef(footer = paste0('<img src="img/QuestionBlock.gif"></img> Meeting'))
                    ))
      )
      
