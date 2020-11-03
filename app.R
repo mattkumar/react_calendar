@@ -18,9 +18,6 @@
                  
                  #HTML for snow effect (see: global.R for definition, references.R for source url)
                  snow_string,
-
-                 #HTML for snow effect (see global.R for definition)
-                 string_snow,
                  
                  #General UI formatting
                  br(),
