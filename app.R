@@ -80,8 +80,6 @@
            title = "Quarterly Meeting",
            HTML('<p><img src="img/test.png" class="center" height="400"></img></p>'),
            HTML('<p><img src="img/zoom.png" class="center" height="70"</img></p>')
-           
-          
         ))
      })
      
