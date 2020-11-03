@@ -10,7 +10,7 @@ js_string <- JS("
    }}")
 
 #HTML for snow effect
-string_snow <- HTML("<style>
+snow_string <- HTML("<style>
   #snowflakeContainer {
     position: absolute;
     left: 0px;
