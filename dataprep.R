@@ -85,7 +85,9 @@ my_cal <- dec %>%
                                                    '<p>Concert</p>',
                                                    '<p><img src="img/Ani_smb3noteblock.gif" height="35"></img></p>'),Saturday))  %>%
   
+  #Concert
+  mutate(Friday = ifelse(Friday %in% c("11","4") ,paste0('<p>',Friday,'</p>',
+                                                         '<p><img src="img/Big_Block_SMB3.png" height="55"></img></p>'),Friday))  
   
-  #Weekly Meetings
-  mutate(Friday = ifelse(Friday %in% c('4','11'), paste0('<p>',Friday,'</p>', 
-                                                         '<p><img src="img/Big_Block_SMB3.png" height="65"></img></p>'),Friday))
+
+  

@@ -1,3 +1,15 @@
+#JS for reactable
+
+js_string <- JS("
+  function(rowInfo, colInfo) {
+   if (window.Shiny && rowInfo.index == 0 && colInfo.id == 'Friday') {
+        Shiny.onInputChange('show2', { column: colInfo.id, index: rowInfo.index + 1 })
+    
+    } else if (window.Shiny && rowInfo.index == 1 && colInfo.id == 'Friday') {
+      Shiny.onInputChange('show1', { column: colInfo.id, index: rowInfo.index + 1 })
+   }}")
+
+#HTML for snow effect
 string_snow <- HTML("<style>
   #snowflakeContainer {
     position: absolute;

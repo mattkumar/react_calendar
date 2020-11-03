@@ -25,3 +25,4 @@
 #https://www.superluigibros.com/images/sprites/snes/allstars_smb3/Map_Screen/SMB3ToadHouses.png
 #https://www.superluigibros.com/images/sprites/nes/smb3/Items/Ani_smb3noteblock.gif
 #https://www.superluigibros.com/images/sprites/nes/smb3/Items/Big_Block_SMB3.png
+#https://www.google.com/search?q=zoom+pixel+icon&sxsrf=ALeKk01gu7OKU0v435zEF8ZMU34f4snjEA:1604371776271&tbm=isch&source=iu&ictx=1&fir=UnZ0VjbUaAx5-M%252CwLlZta41mrGsiM%252C_&vet=1&usg=AI4_-kTxy6bkihog6SfgK2e5vhqN-qxN8w&sa=X&ved=2ahUKEwjypL_OruXsAhWIZs0KHa7iC84Q9QF6BAgNECM#imgrc=UnZ0VjbUaAx5-M

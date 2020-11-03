@@ -10,6 +10,8 @@
  ui <- fluidPage(theme = "css/nes.min.css",
                  use_font("press-start-2p", "www/css/press-start-2p.css"),
                  shinyWidgets::setBackgroundImage(src="img/bg.png"),
+                 
+                 #HTML for snow effect (see globals.R for definition)
                  string_snow,
                  br(),
                  h2("December 2020", align="center"),
@@ -18,8 +20,8 @@
                         offset=2,
                         br(),br(),
                         br(),br(),
-                        br(),br(),
-                     reactableOutput('sales',  width="1200px", height="700px")
+                        br(),br(), 
+                        reactableOutput('sales',  width="1200px", height="700px")
                      )
  )
   
@@ -32,6 +34,10 @@
      #reactable
      output$sales <- renderReactable(
          reactable(my_cal,
+                   
+                   #javascipt for modals (see globals.R for definition)
+                   onClick = js_string,
+                   
                    #basic theme options
                    theme = reactableTheme(backgroundColor = "black",
                                           stripedColor = "black",
@@ -61,11 +67,33 @@
                                                       footerStyle = list(html=TRUE, fontSize=11)),
                                   Wednesday  = colDef(footer = paste0('<img src="img/MarioInvincibleR.gif"></img> Vacation!'),
                                                       footerStyle = list(html=TRUE, fontSize=11)),
-                                  Thursday   = colDef(footer = paste0('<img src="img/QuestionBlock.gif"></img> Tenative'),
+                                  Thursday   = colDef(footer = paste0('<img src="img/QuestionBlock.gif"></img> Meeting'),
                                                       footerStyle = list(html=TRUE, fontSize=11))
                    ))
      )
- } 
+     
+    
+     #Modal 1
+     observeEvent(input$show1, {
+        showModal(modalDialog(
+           title = "Quarterly Meeting",
+           HTML('<p><img src="img/test.png" class="center" height="400"></img></p>'),
+           HTML('<p><img src="img/zoom.png" class="center" height="70"</img></p>')
+           
+          
+        ))
+     })
+     
+     #Modal 2
+     observeEvent(input$show2, {
+        showModal(modalDialog(
+           title = "Tassssssssssssdasdsade",
+           HTML('<p><img src="https://nesmaps.com/maps/SuperMarioBrothers3/sprites/GiantPiranhaPlantGreen.gif" class="Center" height="30"></img></p>'), 
+           "This isdasdasdasdasdasdsas an important message!"
+        ))
+     })
+ }
+     
  
  #run
  shiny::shinyApp(ui, server)
