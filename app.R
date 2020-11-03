@@ -31,7 +31,7 @@
                         br(),br(),
                         br(),br(),
                         br(),br(), 
-                        reactableOutput('sales',  width="1200px", height="700px") 
+                        reactableOutput('cal',  width="1200px", height="700px") 
                      )
  )
   
@@ -42,7 +42,7 @@
      source("dataprep.R")
    
      #reactable
-     output$sales <- renderReactable(
+     output$cal <- renderReactable(
          reactable(my_cal,
                    
                    #javascipt for modals (see global.R for definition)
