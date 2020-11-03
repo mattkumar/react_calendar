@@ -13,9 +13,6 @@
                  #include external font file downloaded by gfonts
                  gfonts::use_font("press-start-2p", "www/css/press-start-2p.css"),
                  
-                 #include fonts from gfonts
-                 use_font("press-start-2p", "www/css/press-start-2p.css"),
-                 
                  #set background
                  shinyWidgets::setBackgroundImage(src="img/bg.png"),
                  
