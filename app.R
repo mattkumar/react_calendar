@@ -22,13 +22,12 @@
                  #General UI formatting
                  br(),
                  h2("December 2020", align = "center"),
-                 br(),
                  column(width=12, 
                         offset=2,
                         br(),br(),
                         br(),br(),
-                        br(),br(), 
-                        reactableOutput('cal',  width = "1200px", height = "700px") 
+                        br(),br(),
+                        reactableOutput('cal', inline = TRUE, width = "1200px", height = "700px") 
                      )
  )
   
@@ -93,10 +92,26 @@
      #Modal 2
      observeEvent(input$show2, {
         showModal(modalDialog(
-           title = "Placeholder",
-           "A placeholder for Modal 2"
+           title = NULL,
+           footer = NULL,
+           easyClose = TRUE,
+           column(12, offset=3, br(), br(), br(), br(), br(), select_string), #select_string is stored in global.R
+           HTML("<style> .modal-dialog{ width:400px};</style>"),
+           HTML("<style> .modal-body {  min-height:200px; background-image: url('img/bezel.png'); background-size: cover;} </style>")
         ))
      })
+     
+     #Modal 3
+     observeEvent(input$show3, {
+       showModal(modalDialog(
+         title = "Family Trip to Grand Parents!",
+         footer = "Kipling -> Bloor-Yonge -> Sheppard-Yonge -> Don Mills",
+         easyClose = TRUE,
+         HTML("<style> .modal-dialog{ width:950px};</style>"),
+         HTML('<p><img src="img/othermap.gif" class="center" height="700"></img></p>')
+       ))
+     })
+ 
  }
      
  

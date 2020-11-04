@@ -56,7 +56,7 @@ my_cal <- dec %>%
   #Skiing!
   mutate(Sunday = ifelse(Sunday %in% c("6","13","27"), paste0('<p>',Sunday,'</p>',
                                                                '<p style="color:lightblue;font-size:12px">Skiing</p>',
-                                                               '<p><img src="img/skii.png" height="55"></img></p>'), Sunday)) %>%
+                                                               '<p><img src="img/skii.gif" height="50"></img></p>'), Sunday)) %>%
   #Vacation Week off
   mutate(Monday = ifelse(Monday == "21", paste0('<p>',Monday,'</p>', 
                                                 '<p><img src="img/MarioInvincibleR.gif" height="25"></img></p>'), Monday))  %>%

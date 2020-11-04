@@ -2,11 +2,15 @@
 
 js_string <- JS("
   function(rowInfo, colInfo) {
-   if (window.Shiny && rowInfo.index == 0 && colInfo.id == 'Friday') {
+   if (window.Shiny && rowInfo.index == 4 && colInfo.id == 'Thursday') {
         Shiny.onInputChange('show2', { column: colInfo.id, index: rowInfo.index + 1 })
     
     } else if (window.Shiny && rowInfo.index == 1 && colInfo.id == 'Friday') {
       Shiny.onInputChange('show1', { column: colInfo.id, index: rowInfo.index + 1 })
+      
+    } else if (window.Shiny && rowInfo.index == 3 && colInfo.id == 'Sunday') {
+      Shiny.onInputChange('show3', { column: colInfo.id, index: rowInfo.index + 1 })
+      
    }}")
 
 #HTML for snow effect
@@ -206,3 +210,14 @@ snow_string <- HTML("<style>
     resetPosition = true;
   }
 </script>")
+
+#HTML for select box
+select_string <- HTML('<p><label>
+                        <input type="radio" class="nes-radio" name="answer" checked />
+                        <span>Continue 2020?</span> 
+                      </label></p>
+                      
+                     <p><label>
+                        <input type="radio" class="nes-radio" name="answer" checked />
+                        <span>To 2021!</span> 
+                      </label></p>')

@@ -31,3 +31,6 @@
 #https://themushroomkingdom.net/images/ani/smb3/ani_smb3_boomboomfly.gif
 #https://www.superluigibros.com/super-mario-world-2-sprites-good-guys
 #https://www.superluigibros.com/images/sprites/nes/smb3/Items/120px-5UPCardRouletteSMB3.gif
+#https://giffiles.alphacoders.com/259/2591.gif
+#https://images.thestar.com/JBiii12jQsmMPXQVDMt3YASfkQE=/1280x1024/smart/filters:cb(1526673561162)/https://www.thestar.com/content/dam/thestar/news/gta/2012/06/13/super_mario_8bit_video_game_meets_ttc_subway_map/ttc_subway_map_super_mario_8bit.jpeg
+
