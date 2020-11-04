@@ -22,12 +22,13 @@
                  #General UI formatting
                  br(),
                  h2("December 2020", align = "center"),
-                 column(width=12, 
+                 column(width=8, 
                         offset=2,
                         br(),br(),
                         br(),br(),
                         br(),br(),
-                        reactableOutput('cal', inline = TRUE, width = "1200px", height = "700px") 
+                        br(),br(),
+                        reactableOutput('cal') 
                      )
  )
   
@@ -58,10 +59,10 @@
                                           footerStyle = list(html=TRUE, fontSize=11, borderColor = "black"),
                                           style = function(value) {
                                                                     if(!is.na(value)) {
-                                                                         list(borderRight = '1px solid #ddd', 
-                                                                              borderBottom = '1px solid #ddd', 
-                                                                              borderLeft = '1px solid #ddd', 
-                                                                              borderTop = '1px solid #ddd', 
+                                                                         list(borderRight = '1px solid #FFFFFF', 
+                                                                              borderBottom = '1px solid #FFFFFF', 
+                                                                              borderLeft = '1px solid #FFFFFF', 
+                                                                              borderTop = '1px solid #FFFFFF', 
                                                                               height = 125)
                                                                     } else {
                                                                         list(borderRight = '1px solid #000',  

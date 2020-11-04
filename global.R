@@ -3,13 +3,14 @@
 js_string <- JS("
   function(rowInfo, colInfo) {
    if (window.Shiny && rowInfo.index == 4 && colInfo.id == 'Thursday') {
-        Shiny.onInputChange('show2', { column: colInfo.id, index: rowInfo.index + 1 })
+        Shiny.onInputChange('show2', { nonce: Math.random(), column: colInfo.id, index: rowInfo.index + 1 })
+        
     
     } else if (window.Shiny && rowInfo.index == 1 && colInfo.id == 'Friday') {
-      Shiny.onInputChange('show1', { column: colInfo.id, index: rowInfo.index + 1 })
+      Shiny.onInputChange('show1', { nonce: Math.random(), column: colInfo.id, index: rowInfo.index + 1 })
       
     } else if (window.Shiny && rowInfo.index == 3 && colInfo.id == 'Sunday') {
-      Shiny.onInputChange('show3', { column: colInfo.id, index: rowInfo.index + 1 })
+      Shiny.onInputChange('show3', { nonce: Math.random(), column: colInfo.id, index: rowInfo.index + 1 })
       
    }}")
 
